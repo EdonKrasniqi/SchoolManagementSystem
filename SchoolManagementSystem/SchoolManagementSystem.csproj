@@ -19,14 +19,13 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="Areas\Admin\Controllers\" />
-    <Folder Include="Areas\Admin\Views\" />
     <Folder Include="Areas\Customer\Controllers\" />
   </ItemGroup>
 
   <ItemGroup>
     <ProjectReference Include="..\School.DataAccess\School.DataAccess.csproj" />
     <ProjectReference Include="..\School.Data\School.Models.csproj" />
+    <ProjectReference Include="..\School.Utility\School.Utility.csproj" />
   </ItemGroup>
 
 </Project>

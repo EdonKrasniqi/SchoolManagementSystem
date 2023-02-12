@@ -17,5 +17,9 @@ namespace School.DataAccess.Data
         }
 
         public DbSet<ApplicationUser> ApplicationUsers { get; set; }
+        public DbSet<Course> Courses { get; set; }
+        public DbSet<Departament> Departaments { get; set; }
+        public DbSet<Professor> Professors { get; set; }
+        public DbSet<Student> Students { get; set; }
     }
 }

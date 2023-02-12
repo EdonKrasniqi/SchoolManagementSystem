@@ -1,7 +1,9 @@
 ﻿using Microsoft.AspNetCore.Identity;
+using Microsoft.AspNetCore.Mvc.ModelBinding.Validation;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -25,8 +27,13 @@ namespace School.Models
         [Required]
         public char Sex { get; set; }
         [Required]
-        public int Student_ID { get; set; }
+        public int? DepartamentId { get; set; }
+        [ForeignKey("DepartmentId")]
+        [ValidateNever]
+        public Departament Departament { get; set; }
         [Required]
         public int ID_Number { get; set; }
+        [Required]
+        public int User_Id { get; set; }
     }
 }

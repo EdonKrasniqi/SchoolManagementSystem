@@ -1,6 +1,9 @@
 using Microsoft.EntityFrameworkCore;
 using School.DataAccess.Data;
 using Microsoft.AspNetCore.Identity;
+using School.DataAccess.Repository.IRepository;
+using School.DataAccess.Repository;
+using School.DataAccess.DbInitializer;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -11,6 +14,8 @@ builder.Services.AddDbContext<ApplicationDbContext>(options =>
     ));
 builder.Services.AddIdentity<IdentityUser, IdentityRole>().AddDefaultTokenProviders()
     .AddEntityFrameworkStores<ApplicationDbContext>();
+builder.Services.AddScoped<IUnitOfWork,UnitOfWork>();
+builder.Services.AddScoped<IDbInitilizer,DbInitializer>();
 var app = builder.Build();
 
 // Configure the HTTP request pipeline.
