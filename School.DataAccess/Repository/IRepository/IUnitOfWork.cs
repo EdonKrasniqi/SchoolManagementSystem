@@ -10,6 +10,8 @@ namespace School.DataAccess.Repository.IRepository
     {
         IApplicationUserRepository ApplicationUser { get; }
         IDepartmentRepository Department { get;  }
+
+        ICourseRepository Course { get; }
         void Save();
     }
 }

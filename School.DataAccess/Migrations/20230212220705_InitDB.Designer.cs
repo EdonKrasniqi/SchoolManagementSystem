@@ -12,8 +12,8 @@ using School.DataAccess.Data;
 namespace School.DataAccess.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    [Migration("20230212155448_InitilizeDb")]
-    partial class InitilizeDb
+    [Migration("20230212220705_InitDB")]
+    partial class InitDB
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {

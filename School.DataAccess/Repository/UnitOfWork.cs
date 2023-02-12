@@ -17,11 +17,14 @@ namespace School.DataAccess.Repository
             _db = db;
             ApplicationUser = new ApplicationUserRepository(_db);
             Department = new DepartmentRepository(_db);
+            Course = new CourseRepository(_db);
         }
 
         public IApplicationUserRepository ApplicationUser { get; private set; }
 
         public IDepartmentRepository Department { get; private set; }
+
+        public ICourseRepository Course { get; private set; }
 
         public void Save()
         {

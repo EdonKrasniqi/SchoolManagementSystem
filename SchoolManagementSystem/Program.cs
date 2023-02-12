@@ -25,6 +25,7 @@ if (!app.Environment.IsDevelopment())
     // The default HSTS value is 30 days. You may want to change this for production scenarios, see https://aka.ms/aspnetcore-hsts.
     app.UseHsts();
 }
+SeedDatabase();
 
 app.UseHttpsRedirection();
 app.UseStaticFiles();
@@ -39,3 +40,12 @@ app.MapControllerRoute(
     pattern: "{area=Customer}/{controller=Home}/{action=Index}/{id?}");
 
 app.Run();
+
+void SeedDatabase()
+{
+    using(var scope = app.Services.CreateAsyncScope())
+    {
+        var dbInitialize = scope.ServiceProvider.GetRequiredService<IDbInitilizer>();
+        dbInitialize.Initialize();
+    }
+}
